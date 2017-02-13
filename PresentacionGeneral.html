@@ -1,0 +1,1268 @@
+<!doctype html>
+
+<!--
+
+    Welcome to the light side of the source, young padawan.
+
+    One step closer to learn something interesting you are...
+
+                               ____                  
+                            _.' :  `._               
+                        .-.'`.  ;   .'`.-.           
+               __      / : ___\ ;  /___ ; \      __  
+             ,'_ ""=-.:__;".-.";: :".-.":__;.-="" _`,
+             :' `.t""=-.. '<@.`;_  ',@:` ..-=""j.' `;
+                  `:-.._J '-.-'L__ `-.-' L_..-;'     
+                    "-.__ ;  .-"  "-.  : __.-"       
+                        L ' /.======.\ ' J           
+                         "-.   "__"   .-"            
+                        __.l"-:_JL_;-";.__           
+                     .-j/'.;  ;""""  / .'\"-.        
+                   .' /:`. "-.:     .-" .';  `.      
+                .-"  / ;  "-. "-..-" .-"  :    "-.   
+             .+"-.  : :      "-.__.-"      ;-._   \  
+             ; \  `.; ;                    : : "+. ; 
+             :  ;   ; ;                    : ;  : \: 
+             ;  :   ; :                    ;:   ;  : 
+            : \  ;  :  ;                  : ;  /  :: 
+            ;  ; :   ; :                  ;   :   ;: 
+            :  :  ;  :  ;                : :  ;  : ; 
+            ;\    :   ; :                ; ;     ; ; 
+            : `."-;   :  ;              :  ;    /  ; 
+             ;    -:   ; :              ;  : .-"   : 
+             :\     \  :  ;            : \.-"      : 
+              ;`.    \  ; :            ;.'_..-=  / ; 
+              :  "-.  "-:  ;          :/."      .'  :
+               \         \ :          ;/  __        :
+                \       .-`.\        /t-""  ":-+.   :
+                 `.  .-"    `l    __/ /`. :  ; ; \  ;
+                   \   .-" .-"-.-"  .' .'j \  /   ;/ 
+                    \ / .-"   /.     .'.' ;_:'    ;  
+                     :-""-.`./-.'     /    `.___.'   
+                           \ `t  ._  /               
+                            "-.t-._:'                
+
+-->
+
+<!--
+    
+    So you'd like to know how to use impress.js?
+    
+    You've made the first, very important step - you're reading the source code.
+    And that's how impress.js presentations are built - with HTML and CSS code.
+    
+    Believe me, you need quite decent HTML and CSS skills to be able to use impress.js effectively.
+    More importantly, you need to be a designer. There are no default styles or layouts for impress.js presentations.
+    
+    You need to design and build it by hand.
+    
+    So...
+    
+    Would you still like to know how to use impress.js?
+    
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Presentacion - Hidrógeno como combustible alternativo</title>
+    
+    <meta name="description" content="Propuesta para utilizar generadores de hidrogeno para mejorar la combustion y reducir la contaminacion, ademas de reducir los costos por combustible muy significativamente" />
+    <meta name="author" content="Carlos Gongora" />
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <style>
+    
+        img {
+            opacity: 0.5;
+            filter: alpha(opacity=50); /* For IE8 and earlier */
+        }
+        
+        img:hover {
+            opacity: 1.0;
+            filter: alpha(opacity=100); /* For IE8 and earlier */
+        }
+    
+      .parrafo_Tangerine {
+        font-family: 'Tangerine', serif;
+        font-size: 48px;
+        }
+
+    </style>
+
+
+</head>
+
+<!--
+    
+    Body element is used by impress.js to set some useful class names, that will allow you to detect
+    the support and state of the presentation in CSS or other scripts.
+    
+    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+    support features required by impress.js, so you should apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    
+    When impress.js script detects that browser supports all required features, this class name will
+    be removed.
+    
+    The class name on body element also depends on currently active presentation step. More details about
+    it can be found later, when `hint` element is being described.
+    
+-->
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Su navegador <b>no cuenta con las caracteristicas necesarias para desplegar animaciones 3D</b><br />Se le presenta una version de la presentacion sin animaciones 3D</p>
+    <p>Para visualizar todas las animaciones 3D de esta presentacion debe usar una computadora de escritorio y navegador<br /><b>Chrome</b>, <b>Safari</b> or <b>Firefox</p>
+</div>
+
+
+<!--
+    
+    Now that's the core element used by impress.js.
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    
+    You probably won't need it now, but there are some configuration options that can be set on this element.
+    
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+    
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+    If you are willing to change this value make sure you understand how CSS perspective works:
+    https://developer.mozilla.org/en/CSS/perspective
+    
+    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
+    right around the corner of this tag ;)
+    
+-->
+<div id="impress">
+
+    <!--
+        
+        Here is where interesting thing start to happen.
+        
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        
+        Positioning information is passed through data attributes.
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
+        
+        It will not be rotated or scaled.
+        
+    -->
+
+    <div id="Diapositiva000" class="step slide" data-x="-3000" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img000" class="imagen000" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=cqjn3mup1So" target="_blank">
+                <img src='https://i.imgur.com/7wjSho4.jpg' style="height:700px; width:1060px; position: absolute;" alt="" />
+            </a>
+            <div class="bubble" style="margin: 10px 10px 10px 10px; border-radius: 10px; top: 200px; left: 40px; height: 300px; width: 1000px; position: absolute; display: table; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; ">
+                <div style:"font-family: 'Montserrat', sans-serif; position: absolute; display: table-cell; vertical-align: middle; left: 80px">
+                    UTILIZACIÓN DE HIDRÓGENO COMO ADITIVO A LA GASOLINA PARA REDUCIR EL CONSUMO DE COMBUSTIBLE
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="Diapositiva001" class="step slide" data-x="0" data-y="0" sdata-z="0" style="padding: 10px 8px;">
+        <div id="img001" class="imagen001" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.jornada.unam.mx/2016/12/26/economia/020n1eco" target="_blank">
+                <img src='https://i.imgur.com/8IA0zcY.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="position: absolute; top: 190px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; opacity: 1;">
+                Diciembre 2016
+            </h2>
+            <h3 style="position: absolute; top: 310px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:55px; opacity: 1;">
+                Temor de aumento de precios de gasolina y desabasto en varias partes de México
+                <a href="http://www.jornada.unam.mx/2016/12/26/economia/020n1eco" target="_blank" style="font-size:37px; color: blue; font-style: italic; text-align: right;"><br />Fuente: Pagina web de La Jornada</a>      </h3>
+            </h3>
+        </div>
+    </div>
+    
+    <div id="Diapositiva002" class="step slide" data-x="0" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img002" class="imagen002" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.milenio.com/politica/epn-cambios_gabinete-2017-luis_videgaray-claudia_ruiz_massieu-milenio-noticias_0_878312331.html" target="_blank">
+                <img src='https://i.imgur.com/p1KXjf2.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 120px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; opacity: 1;">
+                Enero 2017
+            </h2>
+            <h3 style="position: absolute; top: 220px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:55px; opacity: 1;">
+                Iniciamos el año con el gasolinazo y se ven manifestaciones por los incrementos de precios en todo México
+                <a href="http://www.milenio.com/politica/epn-cambios_gabinete-2017-luis_videgaray-claudia_ruiz_massieu-milenio-noticias_0_878312331.html" target="_blank" style="font-size:37px; color: blue; font-style: italic; text-align: right;"><br />Fuente: Pagina web de Milenio Noticias</a>      </h3>
+            </h3>
+        </div>
+    </div>
+    
+    <div id="Diapositiva003" class="step slide" data-x="0" data-y="0" data-z="-3000" style="padding: 10px 8px;">
+        <div id="img003" class="imagen003" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.excelsior.com.mx/nacional/2017/01/26/1142391" target="_blank">
+                <img src='https://i.imgur.com/LvqngRB.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 120px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; opacity: 1;">
+                Febrero 2017
+            </h2>
+            <h3 style="position: absolute; top: 220px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:55px; opacity: 1;">
+                Hacienda confirmó que los precios de los combustibles estarán vigentes hasta el día 3; el aumento del precio se fijará dependiendo del tipo de cambio
+                <a href="http://www.excelsior.com.mx/nacional/2017/01/26/1142391" target="_blank" style="font-size:37px; color: blue; font-style: italic; text-align: right;"><br />Fuente: Pagina web de Excelsior</a>      </h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="Diapositiva004" class="step slide" data-x="1500" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img004" class="imagen004" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://es.wikihow.com/ahorrar-gasolina" target="_blank">
+                <img src='http://i.imgur.com/oNmx1j9.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 60px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:35px; opacity: 1;">
+                PREGUNTA:<br />¿QUÉ PODEMOS HACER?<br />NO PUEDO DEJAR DE USAR MI VEHICULO Y EL COMBUSTIBLE ESTA MUY CARO! ESE INCREMENTO DEL PRECIO DE GASOLINA PONE EN PELIGRO MI NEGOCIO POR LOS COSTOS DE OPERACIÓN POR COMBUSTIBLE!<br />
+            </h2>
+            <h3 style="position: absolute; top: 400px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                RESPUESTA:<br />PODEMOS CONSUMIR MENOS GASOLINA AÑADIENDO ALGO MUY ECONOMICO A LA GASOLINA PARA QUE SE CONSUMA MENOS GASOLINA Y SE MEJORE EL DESEMPEÑO DEL MOTOR<BR />  
+                <!-- <a href="http://www.excelsior.com.mx/nacional/2017/01/26/1142391" target="_blank" style="font-size:37px; color: blue; font-style: italic; text-align: right;"><br />Fuente: Pagina web de Excelsior</a> -->
+            </h3> 
+        </div>
+    </div>
+    
+    <div id="Diapositiva005" class="step slide" data-x="1500" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img005" class="imagen005" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=xIoRWIgzvbM" target="_blank">
+                <img src='https://i.imgur.com/fhCMSg3.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 40px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:40px; opacity: 1;">
+                NASA:<BR />EL HIDRÓGENO LIQUIDO ES EL COMBUSTIBLE ELEGIDO PARA LA EXPLORACIÓN DEL ESPACIO<br />
+            </h2>
+            <h3 style="position: absolute; top: 260px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                El hidrógeno es un propulsor de cohetes ligero y extremadamente potente. Tiene el peso molecular más bajo que cualquier otra sustancia y arde con intensidad extrema (3,000°C). En combinación con un oxidante como el oxígeno líquido, el hidrógeno líquido proporciona el máximo impulso especifico.<br />
+                <a href="https://www.nasa.gov/topics/technology/hydrogen/hydrogen_fuel_of_choice.html" target="_blank" style="color: blue; font-style: italic; text-align: right;"><br />Fuente: NASA</a>
+            </h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="Diapositiva006" class="step slide" data-x="3000" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img006" class="imagen006" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=iJHG3BwbJL4" target="_blank">
+                <img src='https://i.imgur.com/3MC2WWb.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 60px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:42px; opacity: 1;">
+                Existe un modo práctico de obtener o generar hidrógeno para vehículos automotores como autos, camionetas, camiones, motos, etc. sin modificar o sustituir el motor?<br />
+            </h2>
+            <h3 style="position: absolute; top: 330px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:35px; opacity: 1;">
+                SI, Desde la década de los 70´s se han publicado diversos dispositivos que pueden obtener hidrógeno del agua líquida<br />
+            </h3>
+            <h3 style="position: absolute; top: 500px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:35px; opacity: 1;">
+                Se realizo una investigación en Internet y se encontraron 3 diferentes tipos de generadores de hidrógeno: Celda húmeda, celda seca y celda Meyer<br />
+                <!-- <a href="https://es.wikipedia.org/wiki/Motor_de_dos_tiempos/" target="_blank" style="color: blue; font-style: italic; text-align: right;"><br />Fuente: Wikipedia</a> -->
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva007" class="step slide" data-x="3000" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img007" class="imagen007" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=cqjn3mup1So" target="_blank">
+                <img src='https://i.imgur.com/xcIafgM.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 180px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; opacity: 1;">
+                CELDA HÚMEDA<br />
+            </h2>
+            <h3 style="position: absolute; top: 290px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:45px; opacity: 1;">
+                Se denomina celda húmeda a la celda que tiene placas metálicas sumergidas en un contenedor lleno de agua<br />
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva008" class="step slide" data-x="3000" data-y="0" data-z="-3000" style="padding: 10px 8px;">
+        <div id="img008" class="imagen008" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=ZYQPx7PeYss" target="_blank">
+                <img src='https://i.imgur.com/Cv03JiE.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 180px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; opacity: 1;">
+                CELDA SECA<br />
+            </h2>
+            <h3 style="position: absolute; top: 290px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:45px; opacity: 1;">
+                Se denomina celda seca a la celda que tiene placas metálicas ensambladas de modo que las placas son el contenedor del agua<br />
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva009" class="step slide" data-x="3000" data-y="0" data-z="-4500" style="padding: 10px 8px;">
+        <div id="img009" class="imagen009" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=nOGAkRkCWfA" target="_blank">
+                <img src='https://i.imgur.com/QU4sUoE.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 180px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; opacity: 1;">
+                CELDA MEYER<br />
+            </h2>
+            <h3 style="position: absolute; top: 290px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:45px; opacity: 1;">
+                Se denomina celda Meyer a la celda que tiene tubos metálicos sumergidos en un contenedor lleno de agua<br />
+            </h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="Diapositiva010" class="step slide" data-x="4500" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img010" class="imagen010" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=3pM0ZFbmlgw" target="_blank">
+                <img src='https://i.imgur.com/kRYCulc.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 30px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:50px; opacity: 1;">
+                Las celdas generadoras de hidrógeno se tienen que adaptar a diferentes tipos de motor, dado que existen varios tipos de motor en los vehiculos existentes<br />
+            </h2>
+            <h3 style="position: absolute; top: 350px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                Los motores para los que es posible usar estas celdas generadoras de hidrógeno son motores de combustión interna, ya que el hidrogeno obtenido se introduce en la cámara de combustión para explotar junto con la gasolina o diesel<br />
+            </h3>
+        </div>
+    </div>
+
+     <div id="Diapositiva011" class="step slide" data-x="4500" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img011" class="imagen011" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.webcamsdemexico.com/" target="_blank">
+                <img src='https://i.imgur.com/ZQ8cyQE.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 80px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; opacity: 1;">
+                Motores de combustión interna mas comunes en la Ciudad de México<br />
+            </h2>
+            <h3 style="position: absolute; top: 350px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:45px; opacity: 1;">
+                1. Motores de 4 tiempos (gasolina) <br /> 2. Motores de 4 tiempos (diesel)<br /> 3. Motores de 2 tiempos (gasolina)<br />
+            </h3>
+        </div>
+    </div>
+   
+    <div id="Diapositiva012" class="step slide" data-x="4500" data-y="0" data-z="-4000" style="padding: 10px 8px;">
+        <div id="img012" class="imagen012" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.elfinanciero.com.mx/mas/enfoques/32-del-parque-vehicular-va-que-vuela-para-carcacha.html" target="_blank">
+                <img src='https://i.imgur.com/LjBjSUY.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 120px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:55px; opacity: 1;">
+                Vehículos registrados en el DF según periódico El Financiero:<br />Aprox. 5 millones de vehiculos
+            </h2>
+            <h3 style="position: absolute; top: 370px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:45px; opacity: 1;">
+                1. Motores de gasolina: 95% <br /> 2. Motores diesel: 4% <br /> 3. Motores de gas LP y gas Natural: 1%
+            </h3>
+        </div>
+    </div>
+     
+
+
+
+
+
+
+
+
+
+    <div id="Diapositiva013" class="step slide" data-x="6000" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img013" class="imagen013" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=X3Zc-hEedVI" target="_blank">
+                <img src='https://i.imgur.com/66RPqT1.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 50px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:50px; opacity: 1;">
+                Motores de gasolina a 4 tiempos<br />
+            </h2>
+            <h3 style="position: absolute; top: 160px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                Se denomina motor de cuatro tiempos al motor de combustión interna alternativo tanto de ciclo Otto como ciclo Diésel, que precisa cuatro carreras del pistón o émbolo (dos vueltas completas del cigüeñal) para completar el ciclo termodinámico de combustión. Estos cuatro tiempos son: admisión, compresión, combustión y escape.<br />
+                <!-- <a href="https://es.wikipedia.org/wiki/Ciclo_de_cuatro_tiempos" target="_blank" style="color: blue; font-style: italic; text-align: right;"><br />Fuente: Wikipedia</a> -->
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva014" class="step slide" data-x="6000" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img014" class="imagen014" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=X3Zc-hEedVI" target="_blank">
+                <img src='https://i.imgur.com/1dzF5RP.png' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h3 style="position: absolute; top: 60px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                1º tiempo - Admisión: En esta fase el descenso del pistón aspira la mezcla aire combustible en los motores de encendido provocado o el aire en motores de encendido por compresión. La válvula de escape permanece cerrada, mientras que la de admisión está abierta. En el primer tiempo el cigüeñal gira 180º y el árbol de levas da 90º y la válvula de admisión se encuentra abierta y su carrera es descendente.
+            </h3>
+            <h4 style="position: absolute; top: 460px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                En este tiempo se inyecta el hidrogeno a traves del carburador, mezclando el aire succionado con el hidrógeno del generador
+                <a href="https://es.wikipedia.org/wiki/Ciclo_de_cuatro_tiempos" target="_blank" style="color: blue; font-style: italic; text-align: right;"><br />Fuente: Wikipedia</a>
+            </h4>
+        </div>
+    </div>
+
+    <div id="Diapositiva015" class="step slide" data-x="6000" data-y="0" data-z="-3000" style="padding: 10px 8px;">
+        <div id="img015" class="imagen015" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=X3Zc-hEedVI" target="_blank">
+                <img src='https://i.imgur.com/1dzF5RP.png' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h3 style="position: absolute; top: 150px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                2º tiempo - compresión: Al llegar al final de la carrera inferior, la válvula de admisión se cierra, comprimiéndose el gas contenido en la cámara por el ascenso del pistón. En el 2º tiempo el cigüeñal da 360º y el árbol de levas da 180º, y además ambas válvulas se encuentran cerradas y su carrera es ascendente<br />
+                <a href="https://es.wikipedia.org/wiki/Ciclo_de_cuatro_tiempos" target="_blank" style="color: blue; font-style: italic; text-align: right;"><br />Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva016" class="step slide" data-x="6000" data-y="0" data-z="-4500" style="padding: 10px 8px;">
+        <div id="img016" class="imagen016" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=X3Zc-hEedVI" target="_blank">
+                <img src='https://i.imgur.com/1dzF5RP.png' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h4 style="position: absolute; top: 80px; left: 30px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:32px; opacity: 1;">
+                3º tiempo - Explosión/expansión: Al llegar al final de la carrera superior el gas ha alcanzado la presión máxima. En los motores de encendido provocado o de ciclo Otto salta la chispa en la bujía, provocando la inflamación de la mezcla. Una vez iniciada la combustión, esta progresa rápidamente incrementando la temperatura y la presión en el interior del cilindro y expandiendo los gases que empujan el pistón. Esta es la única fase en la que se obtiene trabajo. En este tiempo el cigüeñal gira 180º mientras que el árbol de levas gira 90º respectivamente, ambas válvulas se encuentran cerradas y su carrera es descendente<br />
+                <a href="https://es.wikipedia.org/wiki/Ciclo_de_cuatro_tiempos" target="_blank" style="color: blue; font-style: italic; text-align: right;"><br />Fuente: Wikipedia</a>
+            </h4>
+        </div>
+    </div>
+
+    <div id="Diapositiva017" class="step slide" data-x="6000" data-y="0" data-z="-6000" style="padding: 10px 8px;">
+        <div id="img017" class="imagen017" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=X3Zc-hEedVI" target="_blank">
+                <img src='https://i.imgur.com/1dzF5RP.png' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h3 style="position: absolute; top: 150px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                4º tiempo - escape: En esta fase el pistón empuja, en su movimiento ascendente, los gases de la combustión que salen a través de la válvula de escape que permanece abierta. Al llegar al punto máximo de carrera superior, se cierra la válvula de escape y se abre la de admisión, reiniciándose el ciclo. En este tiempo el cigüeñal gira 180º y el árbol de levas gira 90º<br/>
+                <a href="https://es.wikipedia.org/wiki/Ciclo_de_cuatro_tiempos" target="_blank" style="color: blue; font-style: italic; text-align: right;"><br />Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Diapositiva018" class="step slide" data-x="7500" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img018" class="imagen018" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=v4XNKDqKVt0" target="_blank">
+                <img src='https://i.imgur.com/YNW5BvQ.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="position: absolute; top: 40px; left: 50px; width: 700px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:60px; opacity: 1;">
+                Motores Diesel a 4 tiempos
+            </h2>
+            <h3 style="position: absolute; top: 200px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                El motor diésel es un motor térmico que tiene combustión interna alternativa que se produce por la autoignición del combustible debido a altas temperaturas derivadas de la compresión del aire en el interior del cilindro, según el principio del ciclo del diésel. Se diferencia del motor de gasolina en usar gasóleo como combustible. Ha sido uno de los más utilizados desde su creación.<br />
+                <a href="http://www.monografias.com/trabajos104/motor-diesel/motor-diesel.shtml" target="_blank" style="color: blue; font-style: italic; text-align: right;"><br />Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva19" class="step slide" data-x="7500" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img019" class="imagen019" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=v4XNKDqKVt0" target="_blank">
+                <img src='https://i.imgur.com/ZOx68os.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h3 style="position: absolute; top: 50px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                1º tiempo - Admisión: En esta fase el descenso del pistón aspira la mezcla aire combustible en los motores de encendido provocado o el aire en motores de encendido por compresión. La válvula de escape permanece cerrada, mientras que la de admisión está abierta. En el primer tiempo el cigüeñal gira 180º y el árbol de levas da 90º y la válvula de admisión se encuentra abierta y su carrera es descendente.
+            </h3>
+            <h4 style="position: absolute; top: 460px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                En este tiempo se inyecta el hidrógeno a traves del carburador, mezclando el aire succionado con el hidrogeno del generador<br />
+                <a href="https://es.wikipedia.org/wiki/Motor_di%C3%A9sel" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h4>
+        </div>
+    </div>
+
+    <div id="Diapositiva020" class="step slide" data-x="7500" data-y="0" data-z="-3000" style="padding: 10px 8px;">
+        <div id="img020" class="imagen020" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=v4XNKDqKVt0" target="_blank">
+                <img src='https://i.imgur.com/ZOx68os.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h3 style="position: absolute; top: 190px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                2º tiempo - compresión: Al llegar al final de la carrera inferior, la válvula de admisión se cierra, comprimiéndose el gas contenido en la cámara por el ascenso del pistón. En el 2º tiempo el cigüeñal da 360º y el árbol de levas da 180º, y además ambas válvulas se encuentran cerradas y su carrera es ascendente.<br /><br />
+                <a href="https://es.wikipedia.org/wiki/Motor_di%C3%A9sel" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva021" class="step slide" data-x="7500" data-y="0" data-z="-4500" style="padding: 10px 8px;">
+        <div id="img021" class="imagen021" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=v4XNKDqKVt0" target="_blank">
+                <img src='https://i.imgur.com/ZOx68os.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h4 style="position: absolute; top: 30px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:32px; opacity: 1;">
+                3º tiempo - Explosión/expansión: Al llegar al final de la carrera superior el gas ha alcanzado la presión máxima. En los motores de encendido provocado o de ciclo Otto salta la chispa en la bujía, provocando la inflamación de la mezcla, mientras que en los motores diésel, se inyecta a través del inyector el combustible muy pulverizado, que se autoinflama por la presión y temperatura existentes en el interior del cilindro. En ambos casos, una vez iniciada la combustión, esta progresa rápidamente incrementando la temperatura y la presión en el interior del cilindro y expandiendo los gases que empujan el pistón. Esta es la única fase en la que se obtiene trabajo. En este tiempo el cigüeñal gira 180º mientras que el árbol de levas gira 90º respectivamente, ambas válvulas se encuentran cerradas y su carrera es descendente.<br />
+                <a href="https://es.wikipedia.org/wiki/Motor_di%C3%A9sel" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h4>
+        </div>
+    </div>
+
+    <div id="Diapositiva022" class="step slide" data-x="7500" data-y="0" data-z="-6000" style="padding: 10px 8px;">
+        <div id="img022" class="imagen022" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=v4XNKDqKVt0" target="_blank">
+                <img src='https://i.imgur.com/ZOx68os.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h3 style="position: absolute; top: 120px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                4º tiempo - escape: En esta fase el pistón empuja, en su movimiento ascendente, los gases de la combustión que salen a través de la válvula de escape que permanece abierta. Al llegar al punto máximo de carrera superior, se cierra la válvula de escape y se abre la de admisión, reiniciándose el ciclo. En este tiempo el cigüeñal gira 180º y el árbol de levas gira 90º.<br /><br />
+                <a href="https://es.wikipedia.org/wiki/Motor_di%C3%A9sel" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Diapositiva023" class="step slide" data-x="9000" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img023" class="imagen023" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=e9-kRh1s18Y" target="_blank">
+                <img src='https://i.imgur.com/eQkwXWb.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 50px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:50px; opacity: 1;">
+                Motores de gasolina a 2 tiempos<br />
+            </h2>
+            <h3 style="position: absolute; top: 160px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                El motor de dos tiempos, también denominado motor de ciclos, es un motor de combustión interna que realiza las cuatro etapas del ciclo termodinámico (admisión, compresión, explosión y escape) en dos movimientos lineales del pistón (una vuelta del cigüeñal). Se diferencía del más conocido y frecuente motor de cuatro tiempos de ciclo de Otto, en el que este último realiza las cuatro etapas en dos revoluciones del cigüeñal. Existe tanto en ciclo Otto como en ciclo Diésel.<br /><br />
+                <a href="https://es.wikipedia.org/wiki/Motor_de_dos_tiempos/" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva024" class="step slide" data-x="9000" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img024" class="imagen024" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=e9-kRh1s18Y" target="_blank">
+                <img src='https://i.imgur.com/unINUEU.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h3 style="position: absolute; top: 110px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                1er tiempo: Compresión y Aspiración: El pistón ascendente comprime la mezcla de aire, combustible y algo de aceite en el cilindro y simultáneamente crea un vacío en el cárter que el final de la carrera del pistón, este deja libre la lumbrera de aspiracion o preadmision que llena el cárter con mezcla carburada
+            </h3>
+            <h3 style="position: absolute; top: 440px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                En este tiempo se inyecta el hidrogeno a traves del carburador, mezclando el aire succionado con el hidrogeno del generador<br /><br />
+                <a href="https://es.wikipedia.org/wiki/Motor_de_dos_tiempos/" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva025" class="step slide" data-x="9000" data-y="0" data-z="-3000" style="padding: 10px 8px;">
+        <div id="img025" class="imagen025" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=e9-kRh1s18Y" target="_blank">
+                <img src='https://i.imgur.com/GSvMNwz.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h3 style="position: absolute; top: 50px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:34px; opacity: 1;">
+                2º tiempo: Explosión y Barrido: Mediante una chispa provocada por la bujía se incendia la mezcla comprimida, creando una explosión que empuja el pistón con gran fuerza hacia abajo. En el cárter la mezcla es precomprimida por el pistón descendente, en el momento preciso el pistón deja libre el canal de escape o lumbrera de escape en el cilindro por donde salen los gases de escape de este y poco después la lumbrera de carga que conecta el cárter con el cilindro, por lo que la mezcla precomprimida pasa por este llenando el cilindro y expulsando los últimos resto de los gases de escape quedando preparado el cilindro para un nuevo ciclo.<br /><br />
+                <a href="https://es.wikipedia.org/wiki/Motor_de_dos_tiempos/" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Diapositiva026" class="step slide" data-x="10500" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img026" class="imagen026" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=aneJQkYQbxk" target="_blank">
+                <img src='https://i.imgur.com/Yka3rF4.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 90px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:52px; opacity: 1;">
+                Definicion de octanaje de un combustible<br />
+            </h2>
+            <h3 style="position: absolute; top: 250px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                Octanaje o número de octano es una medida de la calidad y capacidad antidetonante de las gasolinas para evitar las detonaciones y explosiones en las máquinas de combustión interna, de tal manera que se libere o se produzca la máxima cantidad de energía útil.<br /><br />
+                <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_de_octano" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva027" class="step slide" data-x="10500" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img027" class="imagen027" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.atraccion360.com/diferencias-entre-gasolina-magna-y-premium-0" target="_blank">
+                <img src='https://i.imgur.com/Aj6GkzO.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 90px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:52px; opacity: 1;">
+                Octanaje de gasolina
+            </h2>
+            <h3 style="position: absolute; top: 250px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                El combustible Pemex Premium cuenta con 92 octanos, mientras que Pemex Magna tiene 87 octanos. Esta información la podemos ver en las bombas despachadoras de las gasolineras.<br /><br />
+                <a href="http://www.atraccion360.com/diferencias-entre-gasolina-magna-y-premium-0" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva028" class="step slide" data-x="10500" data-y="0" data-z="-3000" style="padding: 10px 8px;">
+        <div id="img028" class="imagen028" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=J7xJ0Ge8aiI" target="_blank">
+                <img src='https://i.imgur.com/AoRxtMU.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 90px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:52px; opacity: 1;">
+                Definicion de Cetanaje de un combustible Diesel
+            </h2>
+            <h3 style="position: absolute; top: 270px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                Así como el octano mide la calidad de ignición de la gasolina, el índice de cetano mide la calidad de ignición de un diesel. Es una medida de la tendencia del diesel a cascabelear en el motor.<br /><br />
+                <a href="https://es.wikipedia.org/wiki/%C3%8Dndice_de_cetano" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva029" class="step slide" data-x="10500" data-y="0" data-z="-4500" style="padding: 10px 8px;">
+        <div id="img029" class="imagen029" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=J7xJ0Ge8aiI" target="_blank">
+                <img src='https://i.imgur.com/DE2nS2K.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 150px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:52px; opacity: 1;">
+                Cetanaje de Pemex Diesel<br/>(indice de cetano)
+            </h2>
+            <h3 style="position: absolute; top: 330px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                El combustible Pemex Diesel cuenta con 53 cetanos<br /><br />
+                <a href="http://www.ref.pemex.com/octanaje/24DIESEL.htm" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: PEMEX</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva030" class="step slide" data-x="10500" data-y="0" data-z="-6000" style="padding: 10px 8px;">
+        <div id="img030" class="imagen030" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://carburagas.com.mx/productos-gas-lp/generalidades-del-gas-lp/" target="_blank">
+                <img src='https://i.imgur.com/GdQi40I.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 90px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:52px; opacity: 1;">
+                Octanaje del gas LP
+            </h2>
+            <h3 style="position: absolute; top: 270px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                 El Gas LP tiene un octanaje mayor que cualquier gasolina: de 110 octanos a 125 octanos, esto delimita cualquier cascabeleo y auto encendido.<br /><br />
+                <a href="http://carburagas.com.mx/productos-gas-lp/generalidades-del-gas-lp/" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: CARBURAGAS.COM.MX</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva031" class="step slide" data-x="10500" data-y="0" data-z="-7500" style="padding: 10px 8px;">
+        <div id="img031" class="imagen031" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.nasa.gov/content/liquid-hydrogen-the-fuel-of-choice-for-space-exploration" target="_blank">
+                <img src='https://i.imgur.com/4B2IjlF.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 90px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:52px; opacity: 1;">
+                Octanaje de hidrógeno
+            </h2>
+            <h3 style="position: absolute; top: 270px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                Segun Wikipedia el hidrógeno tiene un indice de octano mayor a 130<br /><br />
+                <a href="https://en.wikipedia.org/wiki/Octane_rating" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia<br /></a>
+                <a href="https://www.nasa.gov/content/liquid-hydrogen-the-fuel-of-choice-for-space-exploration" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: www.nasa.gov</a>
+            </h3>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div id="Diapositiva032" class="step slide" data-x="12000" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img032" class="imagen032" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.ecovehiculos.gob.mx/" target="_blank">
+                <img src='https://i.imgur.com/QyY82Pc.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 90px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:58px; opacity: 1;">
+                Rendimiento de combustible
+            </h2>
+            <h3 style="position: absolute; top: 270px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                Se define como el consumo de combustibe en kilometros por litro en diferentes condiciones. Los mas comunes son el rendimiento en carretera y rendimiento en ciudad.<br /><br />
+                <a href="http://www.ecovehiculos.gob.mx/" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: ecovehiculos.gob.mx</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva033" class="step slide" data-x="12000" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img033" class="imagen033" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.autocosmos.com.mx/catalogo/vigente/chevrolet/spark" target="_blank">
+                <img src='https://i.imgur.com/PGf2123.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 20px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:44px; opacity: 1;">
+                CHEVROLET / SPARK / 2016<br />
+                Versión: LT 5PTS 1.4L 4CIL 98HP MAN<br />
+            </h2>
+            <h2 style="vertical-align: middle; position: absolute; top: 150px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                ESPECIFICACIONES<br />
+            </h2>
+            <h3 style="position: absolute; top: 190px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Motor: Cilindros: 4<br />
+                Potencia: 98 HP<br />
+                Tamaño: 1.4 L<br />
+            </h3>
+            <h2 style="vertical-align: middle; position: absolute; top: 280px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                CONSUMO DE COMBUSTIBLE<br />
+            </h2>
+            <h3 style="position: absolute; top: 320px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Rendimiento Ciudad:<br />
+                18.96 km/l SIN celda de hidrogeno<br />
+                Gasto Anual Estimado(ciudad) : $ 18,765.82<br />
+                28.44 km/l CON celda de hidrogeno (combustible rinde 50% mas)<br />
+                Gasto Anual Estimado(ciudad) : $ 12,510.54<br />
+            </h3>
+            <h3 style="position: absolute; top: 460px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                AHORRO ANUAL: $6,255.28 (considerando 20,000 kilómetros al año en ciudad, combustible PREMIUM a $17.79 pesos por litro) <br />
+            </h3>
+
+            <h2 style="vertical-align: middle; position: absolute; top: 520px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                EMISIONES CONTAMINANTES<br />
+            </h2>
+            <h3 style="position: absolute; top: 560px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Emisión CO2: 140 g/km<br />
+                Emisión Anual Estimada de CO2: 2,100 kg<br />   
+                Emisión NOx: 8 g/1000km<br /><br />
+                <a href="http://www.ecovehiculos.gob.mx/ecoetiquetado.php?vehiculo_id=15308" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: www.ecovehiculos.gob.mx</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva034" class="step slide" data-x="12000" data-y="0" data-z="-3000" style="padding: 10px 8px;">
+        <div id="img034" class="imagen034" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.autocosmos.com.mx/catalogo/vigente/chevrolet/sonic" target="_blank">
+                <img src='https://i.imgur.com/oOAba5i.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 20px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:41px; opacity: 1;">
+                CHEVROLET / SONIC / 2016<br />
+                LT HATCHBACK 5PTS 1.6L 4CIL 115 HP MAN<br />
+            </h2>
+            <h2 style="vertical-align: middle; position: absolute; top: 150px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                ESPECIFICACIONES<br />
+            </h2>
+            <h3 style="position: absolute; top: 190px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Motor: Cilindros: 4<br />
+                Potencia: 115 HP<br />
+                Tamaño: 1.6 L<br />
+            </h3>
+            <h2 style="vertical-align: middle; position: absolute; top: 280px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                CONSUMO DE COMBUSTIBLE<br />
+            </h2>
+            <h3 style="position: absolute; top: 320px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Rendimiento Ciudad:<br />
+                15.71 km/l SIN celda de hidrogeno<br />
+                Gasto Anual Estimado de Combustible: $ 22,647.99<br />
+                23.56 km/l CON celda de hidrogeno (combustible rinde 50% mas)<br />
+                Gasto Anual Estimado de Combustible: $ 15,101.86<br />
+            </h3>
+            <h3 style="position: absolute; top: 460px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                AHORRO ANUAL: $7,546.13 (considerando 20,000 kilómetros al año en ciudad, combustible PREMIUM a $17.79 pesos por litro) <br />
+            </h3>
+
+            <h2 style="vertical-align: middle; position: absolute; top: 520px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                EMISIONES CONTAMINANTES<br />
+            </h2>
+            <h3 style="position: absolute; top: 560px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Emisión CO2: 171 g/km<br />
+                Emisión Anual Estimada de CO2: 2,565 kg<br />
+                Emisión NOx: 7 g/1000km<br />
+                <a href="http://www.ecovehiculos.gob.mx/ecoetiquetado.php?vehiculo_id=15299" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: www.ecovehiculos.gob.mx</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva035" class="step slide" data-x="12000" data-y="0" data-z="-4500" style="padding: 10px 8px;">
+        <div id="img035" class="imagen035" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.autocosmos.com.mx/catalogo/vigente/chevrolet/cruze" target="_blank">
+                <img src='http://i.imgur.com/bmDxI2z.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 20px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:41px; opacity: 1;">
+                CHEVROLET / CRUZE / 2016<br />
+                4PTS 1.8L 4CIL 139HP MAN<br />
+            </h2>
+            <h2 style="vertical-align: middle; position: absolute; top: 150px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                ESPECIFICACIONES<br />
+            </h2>
+            <h3 style="position: absolute; top: 190px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Motor: Cilindros: 4<br />
+                Potencia: 139 HP<br />
+                Tamaño: 1.8 L<br />
+            </h3>
+            <h2 style="vertical-align: middle; position: absolute; top: 280px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                CONSUMO DE COMBUSTIBLE<br />
+            </h2>
+            <h3 style="position: absolute; top: 320px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Rendimiento Ciudad:<br />
+                13.35 km/l km/l SIN celda de hidrogeno<br />
+                Gasto Anual Estimado de Combustible: $ 26,651.68<br />
+                23.56 km/l CON celda de hidrogeno (combustible rinde 50% mas)<br />
+                Gasto Anual Estimado de Combustible: $ 15,101.86<br />
+            </h3>
+            <h3 style="position: absolute; top: 460px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                AHORRO ANUAL: $11,549.81 (considerando 20,000 kilómetros al año en ciudad, combustible PREMIUM a $17.79 pesos por litro) <br />
+            </h3>
+
+            <h2 style="vertical-align: middle; position: absolute; top: 520px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                EMISIONES CONTAMINANTES<br />
+            </h2>
+            <h3 style="position: absolute; top: 560px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Emisión CO2: 202 g/km<br />
+                Emisión Anual Estimada de CO2: 3,030 kg<br />
+                Emisión NOx: 30 g/1000km<br />
+                <a href="http://www.ecovehiculos.gob.mx/ecoetiquetado.php?vehiculo_id=15276" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: www.ecovehiculos.gob.mx</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva036" class="step slide" data-x="12000" data-y="0" data-z="-6000" style="padding: 10px 8px;">
+        <div id="img036" class="imagen036" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.autocosmos.com.mx/catalogo/vigente/chevrolet/traverse" target="_blank">
+                <img src='https://i.imgur.com/TYEaNIC.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 20px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:41px; opacity: 1;">
+                CHEVROLET / TRAVERSE / 2016<br />
+                Versión: 5PTS 3.6L 6CIL 281HP AUT<br />
+            </h2>
+            <h2 style="vertical-align: middle; position: absolute; top: 150px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                ESPECIFICACIONES<br />
+            </h2>
+            <h3 style="position: absolute; top: 190px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Motor: Cilindros: 6<br />
+                Potencia: 281 HP<br />
+                Tamaño: 3.6 L<br />
+            </h3>
+            <h2 style="vertical-align: middle; position: absolute; top: 280px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                CONSUMO DE COMBUSTIBLE<br />
+            </h2>
+            <h3 style="position: absolute; top: 320px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Rendimiento Ciudad:<br />
+                8.76 km/l km/l SIN celda de hidrogeno<br />
+                Gasto Anual Estimado de Combustible: $ 40,616.43<br />
+                13.14 km/l CON celda de hidrogeno (combustible rinde 50% mas)<br />
+                Gasto Anual Estimado de Combustible: $ 27,077.62<br />
+            </h3>
+            <h3 style="position: absolute; top: 460px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                AHORRO ANUAL: $13,538.81 (considerando 20,000 kilómetros al año en ciudad, combustible PREMIUM a $17.79 pesos por litro) <br />
+            </h3>
+
+            <h2 style="vertical-align: middle; position: absolute; top: 520px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                EMISIONES CONTAMINANTES<br />
+            </h2>
+            <h3 style="position: absolute; top: 560px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Emisión CO2: 295 g/km<br />
+                Emisión Anual Estimada de CO2: 4,425 kg<br />
+                Emisión NOx: 12 g/1000km<br />
+                <a href="http://www.ecovehiculos.gob.mx/ecoetiquetado.php?vehiculo_id=15318" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: www.ecovehiculos.gob.mx</a>
+            </h3>
+        </div>
+    </div>
+
+    <div id="Diapositiva037" class="step slide" data-x="12000" data-y="0" data-z="-7500" style="padding: 10px 8px;">
+        <div id="img037" class="imagen037" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.autocosmos.com.mx/catalogo/vigente/chevrolet/suburban" target="_blank">
+                <img src='http://i.imgur.com/FGb1KiU.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 20px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:41px; opacity: 1;">
+                CHEVROLET / SUBURBAN / 2016<br />
+                Versión: LTZ 4X4 5PTS 5.3L 8CIL 355HP AUT<br />
+            </h2>
+            <h2 style="vertical-align: middle; position: absolute; top: 150px; left: 50px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                ESPECIFICACIONES<br />
+            </h2>
+            <h3 style="position: absolute; top: 190px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Motor: 	Cilindros: 8<br />
+                Potencia: 355 HP<br />
+                Tamaño: 5.3 L<br />
+            </h3>
+            <h2 style="vertical-align: middle; position: absolute; top: 280px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                CONSUMO DE COMBUSTIBLE<br />
+            </h2>
+            <h3 style="position: absolute; top: 320px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Rendimiento Ciudad:<br />
+                7.86 km/l  SIN celda de hidrogeno<br />
+                Gasto Anual Estimado de Combustible: $ 45,267.17<br />
+                11.79 km/l CON celda de hidrogeno (combustible rinde 50% mas)<br />
+                Gasto Anual Estimado de Combustible: $ 30,178.11<br />
+            </h3>
+            <h3 style="position: absolute; top: 460px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: red; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                AHORRO ANUAL: $15,089.05 (considerando 20,000 kilómetros al año en ciudad, combustible PREMIUM a $17.79 pesos por litro) <br />
+            </h3>
+
+            <h2 style="vertical-align: middle; position: absolute; top: 520px; left: 47px; width: 980px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                EMISIONES CONTAMINANTES<br />
+            </h2>
+            <h3 style="position: absolute; top: 560px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:24px; opacity: 1;">
+                Emisión CO2: 318 g/km<br />
+                Emisión Anual Estimada de CO2: 4,770 kg<br />
+                Emisión NOx: 20 g/1000km <br />
+                <a href="http://www.ecovehiculos.gob.mx/ecoetiquetado.php?vehiculo_id=15313" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: www.ecovehiculos.gob.mx</a>
+            </h3>
+        </div>
+    </div>
+   
+<!--    <div id="Diapositiva038" class="step slide" data-x="12000" data-y="0" data-z="-9000" style="padding: 10px 8px;">
+        <div id="img038" class="imagen038" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="https://www.youtube.com/watch?v=e9-kRh1s18Y" target="_blank">
+                <img src='https://i.imgur.com/QyY82Pc.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 90px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:58px; opacity: 1;">
+                Rendimiento de camiones con motor diésel
+            </h2>
+            <h3 style="position: absolute; top: 270px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:37px; opacity: 1;">
+                Se define como <br /><br />
+                <a href="http://imt.mx/archivos/Publicaciones/PublicacionTecnica/pt202.pdf" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+                <a href="http://www.capufe.gob.mx/site/normateca/normas/77_Bases_para_la_Administracion_del_Parque_de_Maquinaria_a_cargo_de_CAPUFE_dic_05/Anexo05.pdf" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a>
+            </h3>
+        </div>
+    </div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Diapositiva039" class="step slide" data-x="13500" data-y="0" data-z="0" style="padding: 10px 8px;">
+        <div id="img039" class="imagen039" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <a href="http://www.aire.cdmx.gob.mx/default.php?opc=%27ZaBhnmI=&dc=%27Yw==" target="_blank">
+                <img src='https://i.imgur.com/amgscc1.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 20px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:45px; opacity: 1;">
+                Gases contaminantes regulados por la secretaria del medio ambiente
+            </h2>
+            <h3 style="position: absolute; top: 160px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:30px; opacity: 1;">
+                El gobierno federal es el responsable de establecer los estándares para la protección de la salud pública y vigilar su cumplimiento. Estos estándares se encuentran publicados en las Normas Oficiales Mexicanas (NOM) y son de observación obligatoria en todo el país. Las NOM describen los limites permisibles para los contaminantes criterio. Estas normas están condicionadas a una revisión periódica para reflejar la información reciente sobre los efectos en la salud y la gestión de la calidad del aire.<br />
+                En el monitoreo de la calidad del aire se emplean dos tipos de normas: las NOM de salud ambiental que establecen los límites permisibles para los contaminantes criterio, y las NOM técnicas que definen los métodos de medición de los contaminantes criterio.<br/>
+<!--                <a href="http://www.capufe.gob.mx/site/normateca/normas/77_Bases_para_la_Administracion_del_Parque_de_Maquinaria_a_cargo_de_CAPUFE_dic_05/Anexo05.pdf" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a> -->
+            </h3>
+        </div>
+    </div>
+
+
+
+
+    <div id="Diapositiva040" class="step slide" data-x="13500" data-y="0" data-z="-1500" style="padding: 10px 8px;">
+        <div id="img040" class="imagen040" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            <!-- <div id="CajaDeTexto" style="border-radius: 10px; background: blue; opacity: 0.5; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></div> -->
+            <a href="http://www.eap.df.gob.mx/transparencia/PORTAL%20EAP/Actualizacion_de_la_pagina/Parte%207%20Transparencia/Articulo_14/Fraccion%20I%20Marco%20Normativo/pdfs/Reglamento_ambiental.pdf" target="_blank">
+                <img src='https://i.imgur.com/kIzj26J.jpg' style="height:700px; width:1060px; position: relative;" alt="" />
+            </a>
+            <h2 style="vertical-align: middle; position: absolute; top: 20px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; text-shadow: 5px 5px #000000; color: #ffff00; margin: 0px 0px 0px 0px; font-size:33px; opacity: 1;">
+                REGLAMENTO DE LA LEY AMBIENTAL DEL DISTRITO FEDERAL EN MATERIA DE VERIFICACIÓN VEHICULAR<br />
+                CAPÍTULO II<br />
+                DE LAS OBLIGACIONES DE PROPIETARIOS O POSEEDORES DE VEHÍCULOS AUTOMOTORES<br />
+            </h2>
+            <div id="CajaDeTexto" style="background: 'red', opacity: 0.7">
+                
+                <h3 style="position: absolute; top: 220px; left: 50px; width: 950px; padding: 0px; line-height: 120%; font-family: 'Arial Black', 'Arial', Gadget, sans-serif; text-shadow: 3px 3px #000000; color: #00FFFF; margin: 0px 0px 0px 0px; font-size:26px; opacity: 1;">
+                    Artículo 10.<br />
+                    Los propietarios o poseedores de vehículos automotores en circulación matriculados en el Distrito Federal, tienen las siguientes obligaciones:<br />
+                    I. Pagar al Centro de Verificación respectivo únicamente la tarifa autorizada por la Secretaría para la verificación vehicular en los términos del Programa de Verificación Vehicular Obligatoria para el Distrito Federal;<br />
+                    II. Mantener y conservar las condiciones originales de su automotor para evitar el incremento en las emisiones vehiculares de gases, partículas u opacidad;<br />
+                    III. Respetar las restricciones de circulación de su vehículo automotor conforme al Programa Hoy No Circula y al certificado u holograma que expida el Centro de Verificación respectivo, conforme al Programa de Verificación Vehicular Obligatoria que emita la Secretaría;
+    <!--                El gobierno federal es el responsable de establecer los estándares para la protección de la salud pública y vigilar su cumplimiento. Estos estándares se encuentran publicados en las Normas Oficiales Mexicanas (NOM) y son de observación obligatoria en todo el país. Las NOM describen los limites permisibles para los contaminantes criterio. Estas normas están condicionadas a una revisión periódica para reflejar la información reciente sobre los efectos en la salud y la gestión de la calidad del aire.<br /> 
+                    <a href="http://www.capufe.gob.mx/site/normateca/normas/77_Bases_para_la_Administracion_del_Parque_de_Maquinaria_a_cargo_de_CAPUFE_dic_05/Anexo05.pdf" target="_blank" style="color: blue; font-style: italic; text-align: right;">Fuente: Wikipedia</a> -->
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div id="Diapositiva041" class="step slide" data-x="13500" data-y="0" data-z="-4500" style="padding: 10px 8px;">
+        <div id="img041" class="imagen041" style="margin: 0px 0px 0px 0px; height:700px; width:1060px; padding: 0px 0px; background-repeat: no-repeat; background-size: 100% 100%;">
+            
+            <div href="https://www.youtube.com/watch?v=e9-kRh1s18Y" target="_blank">
+                <img src='https://i.imgur.com/QyY82Pc.jpg' style="height:700px; width:1060px; position: absolute;" alt="" />
+                
+                <div id="contenedor" style="position: relative; width: 300px; height: 200px;">
+                    <div id="CajaDeTexto" style="border-radius: 10px; background: blue; opacity: 0.1; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></div>
+                    <div id="TextoDePrueba" style="margin: 10px 10px 10px 10px; opacity: 1; color: #002080; text-shadow: 3px 3px yellow; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                        Hola
+                    </div>
+                </div>
+                <div id="contenedorEspacio" style="position: relative; width: 300px; height: 10px;">
+                    <div id="CajaDeTextoEspacio" style="border-radius: 10px; background: red; opacity: 0.1; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></div>
+                </div>
+                <div id="contenedor2" style="position: relative; width: 600px; height: 400px;">
+                    <div id="CajaDeTexto2" style="border-radius: 10px; background: blue; opacity: 0.1; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></div>
+                    <div id="TextoDePrueba2" style="margin: 10px 10px 10px 0px; opacity: 1; color: black; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                        Hola2
+                        <div id="contenedor3" style="position: relative; width: 500px; height: 300px;">
+                            <div id="CajaDeTexto3" style="border-radius: 10px; background: blue; opacity: 0.1; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></div>
+                            <div id="TextoDePrueba3" style="margin: 10px 10px 10px 0px; opacity: 1; color: black; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                                Hola3
+                                <div id="contenedor4" style="position: relative; width: 400px; height: 200px;">
+                                    <div id="CajaDeTexto4" style="border-radius: 10px; background: blue; opacity: 0.1; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></div>
+                                    <div id="TextoDePrueba4" style="margin: 10px 10px 10px 10px; opacity: 1; color: black; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                                        Hola4
+                                    </div>
+                                </div>        
+                                  
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+                                    
+            </div>
+                 
+ -->
+                
+
+                
+            
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    <!--
+        
+        So to summarize of all the possible attributes used to position presentation steps, we have:
+        
+        * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
+            the canvas in pixels; their default value is 0;
+        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` - they define the rotation of
+            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+            are exactly the same;
+        * `data-scale` - defines the scale of step element; default value is 1
+        
+        These values are used by impress.js in CSS transformation functions, so for more information consult
+        CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
+        
+    -->
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+
+
+
+    <!--
+    -------------------------------------------------------------------------------------------------------
+    --!>
+
+
+ 
+
+
+
+</div>
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Use a spacebar or arrow keys to navigate</p>";
+}
+</script>
+
+<!--
+    
+    Last, but not least.
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    
+    In here I just include full source of the script to make it more readable.
+    
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because it should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+    
+-->
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to the API that controls the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.init()` - initializes the presentation,
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation,
+        `api.goto( stepIndex | stepElementId | stepElement, [duration] )` - moves the presentation to the step given by its index number
+                id or the DOM element; second parameter can be used to define duration of the transition in ms,
+                but it's optional - if not provided default transition duration for the presentation will be used.
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>
+
+<!--
+    
+    Now you know more or less everything you need to build your first impress.js presentation, but before
+    you start...
+    
+    Oh, you've already cloned the code from GitHub?
+    
+    You have it open in text editor?
+    
+    Stop right there!
+    
+    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
+    first needs to grow in your mind.
+    
+    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
+    
+    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
+    to present. It will get you closer and closer to the layout you'll build later with impress.js.
+    
+    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
+    it earlier, because you'll only waste your time fighting with positioning of useless points.
+    
+    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
+    creating awesome and engaging presentations.
+    
+    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
+    
+-->
+
+<!--
+    
+    Are you still reading this?
+    
+    For real?
+    
+    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
+    to congratulate you personally :)
+    
+    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
+    or anything you like to drink. And raise a glass for me ;)
+    
+    Cheers!
+    
+-->
+
